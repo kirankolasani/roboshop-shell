@@ -4,9 +4,9 @@ USER=$(id -u)
 DATE=$(date +%F)
 LogFile=/tmp/$0-$DATE.log
 
-if [ $USER -eq 0 ]
+if [ $USER -ne 0 ]
 then 
- echo -e "\e[31m its root user \e[0m"
-else
- echo -e "\e[32m it's not root user"
+ echo -e "\e[31m Error: Please run the script with root access \e[0m"
+ exit 1
 fi
+
