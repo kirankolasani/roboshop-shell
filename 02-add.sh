@@ -5,9 +5,11 @@
 # a=$1
 # b=$2
 echo "Plz enter 1st number :"
-read $1
+read Num1
 echo "Plz enter 2nd number : "
-read $2
+read Num2
+a=$Num1
+b=$Num2
 
 add=$((a+b))
 
