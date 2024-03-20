@@ -27,13 +27,13 @@ Validate(){
 # Installed pacakes passed at runtime
 for i in $@
 do 
- yum list installed $i >> $LogFile
+ yum list installed $i &>> $LogFile
  if [ $? -ne 0 ]
  then 
-   yum install $i -y >> $LogFile
+   yum install $i -y &>> $LogFile
    Validate $? $i
  else
-  echo -e "$Y The $i package is alredy installed"
+  echo -e "$Y The $i package is alredy installed $N"
  fi  
 done
 
