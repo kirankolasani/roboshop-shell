@@ -2,8 +2,12 @@
 # a=25
 # b=34
 
-a=$1
-b=$2
+# a=$1
+# b=$2
+echo "Plz enter 1st number :"
+read $1
+echo "Plz enter 2nd number : "
+read $2
 
 add=$((a+b))
 
