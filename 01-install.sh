@@ -21,6 +21,7 @@ Validate(){
       exit 1
     else
       echo -e "Installing $2 ....$G SUCCESS"
+    fi
 }
 
 # Installed pacakes passed at runtime
