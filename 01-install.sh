@@ -2,11 +2,38 @@
 
 USER=$(id -u)
 DATE=$(date +%F)
-LogFile=/tmp/$0-$DATE.log
+LogDir=/tmp/script-logs
+LogFile=$LogDir/$0-$DATE.log
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
 if [ $USER -ne 0 ]
 then 
- echo -e "\e[31m Error: Please run the script with root access \e[0m"
+ echo -e "$R Error: Please run the script with root user/access "
  exit 1
 fi
+Validate(){
+    if [ $1 -ne 0 ]
+    then
+      echo -e "Installing $2 ....$R FAILURE"
+      exit 1
+    else
+      echo -e "Installing $2 ....$G SUCCESS"
+}
+
+# Installed pacakes passed at runtime
+for i in $@
+do 
+ yum list installed $i >> $LogFile
+ if [ $? -ne 0 ]
+ then 
+   yum install $i -y >> $LogFile
+   Validate $? $i
+ else
+  echo -e "$Y The $i package is alredy installed"
+ fi  
+done
+
 
