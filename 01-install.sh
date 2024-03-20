@@ -9,3 +9,4 @@ then
  echo -e "\e[31m its root user \e[0m"
 else
  echo -e "\e[32m it's not root user"
+ fi
