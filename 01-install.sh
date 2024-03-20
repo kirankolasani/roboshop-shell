@@ -30,6 +30,7 @@ do
  yum list installed $i &>> $LogFile
  if [ $? -ne 0 ]
  then 
+   echo "Let's install $i"
    yum install $i -y &>> $LogFile
    Validate $? $i
  else
