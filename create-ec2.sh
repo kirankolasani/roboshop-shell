@@ -1,7 +1,7 @@
 #!/bin/bash
 
 INSTANCE_NAME=("web" "mongodb" "redis" "mysql" "catalogue" "user" "cart" "shipping" "rabbitmq" "payment" "dispatch")
-INSTANCE_TYPE=""
+INSTANCE_TYPE="t3.micro"
 SECURITY_group_ID="sg-0fa491629b46961b3"
 IMAGE_ID="ami-0f3c7d07486cad139"
 
@@ -10,10 +10,9 @@ do
   if [[ $i=="mongodb" || $i=="mysql" ]]
   then
    INSTANCE_TYPE="t2.medium"
-   echo "creating instance $i"
    
   fi
-  INSTANCE_TYPE="t2.micro"
+  
   IPADDRESS=$(aws ec2 run-instances --image-id $IMAGE_ID --instance-type $INSTANCE_TYPE --security-group-ids $SECURITY_group_ID --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value='$i'}]'|jq -r '.Instances[0].PrivateIpAddress')
   echo "Created $i instance with Private IP : $IPADDRESS"
   
