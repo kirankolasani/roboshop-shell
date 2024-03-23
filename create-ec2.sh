@@ -1,6 +1,7 @@
 #!/bin/bash
 
-INSTANCE_NAME=("web" "mongodb" "redis" "mysql" "catalogue" "user" "cart" "shipping" "rabbitmq" "payment" "dispatch")
+#INSTANCE_NAME=("web" "mongodb" "redis" "mysql" "catalogue" "user" "cart" "shipping" "rabbitmq" "payment" "dispatch")
+INSTANCE_NAME=$@
 INSTANCE_TYPE=""
 SECURITY_group_ID="sg-0fa491629b46961b3"
 IMAGE_ID="ami-0f3c7d07486cad139"
