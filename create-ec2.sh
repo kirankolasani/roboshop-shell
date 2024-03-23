@@ -15,7 +15,7 @@ do
   fi
   
   IPADDRESS=$(aws ec2 run-instances --image-id $IMAGE_ID --instance-type $INSTANCE_TYPE --security-group-ids $SECURITY_group_ID --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value='$i'}]'|jq -r '.Instances[0].PrivateIpAddress')
-  echo "Created $i instance with Private IP : $IPADDRESS"
+  echo "Created $i instance with Private IP : $IPADDRESS with instance_type : $INSTANCE_TYPE"
   
 done
 
