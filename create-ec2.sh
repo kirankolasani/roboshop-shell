@@ -7,7 +7,7 @@ IMAGE_ID="ami-0f3c7d07486cad139"
 
 for i in ${INSTANCE_NAME[@]}
 do 
-  if [[$i=="mongodb" || $i=="mysql"]]
+  if [[ $i=="mongodb" || $i=="mysql" ]]
   then
    INSTANCE_TYPE="t2.medium"
    echo "creating instance $i"
