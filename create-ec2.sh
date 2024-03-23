@@ -3,7 +3,7 @@
 INSTANCE_NAME=("web" "mongodb" "redis" "mysql" "catalogue" "user" "cart" "mysql" "shipping" "rabbitmq" "payment" "dispatch")
 
 
-for i in $INSTANCE_NAME[@]
+for i in ${INSTANCE_NAME[@]}
 do 
  echo "creating instance $i"
 done
