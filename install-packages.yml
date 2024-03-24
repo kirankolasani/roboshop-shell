@@ -5,12 +5,12 @@
     yum:
      name: '{{item}}'
      state: present
-     with_items:
-     - git
-     - wget
-     - curl
-     - zip
-     - unzip
-     - vim
+    with_items:
+    - git
+    - wget
+    - curl
+    - zip
+    - unzip
+    - vim
 
 ...
