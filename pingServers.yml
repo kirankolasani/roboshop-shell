@@ -6,4 +6,6 @@
   - name: Test connection
     ping:
     remote_user: root
+  - name: Creating user
+    user: ansible
 ...
