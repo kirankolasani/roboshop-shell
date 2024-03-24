@@ -19,7 +19,7 @@ do
   
   IPADDRESS=$(aws ec2 run-instances --image-id $IMAGE_ID --instance-type $INSTANCE_TYPE --security-group-ids $SECURITY_group_ID --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value='$i'}]'|jq -r '.Instances[0].PrivateIpAddress')
   echo "Created $i instance with Private IP : $IPADDRESS with instance_type : $INSTANCE_TYPE"
-  aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ZONE_ID --change-batch '{
+  #aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ZONE_ID --change-batch '{
       "Changes": [
         {
           "Action": "CREATE",
