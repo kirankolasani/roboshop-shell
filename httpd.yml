@@ -6,7 +6,7 @@
      name: httpd
      state: latest
      notify:
-      - name: starting httpd
+      - starting httpd
   handlers:
   - name: starting httpd
     service:
