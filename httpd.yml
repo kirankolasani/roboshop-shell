@@ -5,13 +5,13 @@
     yum:
      name: httpd
      state: latest
-  #    notify:
-  #     - name: starting httpd
-  # handlers:
+     notify:
+      - name: starting httpd
+  handlers:
   - name: starting httpd
     service:
      name: httpd
-     state: started
+     state: restarted
 
 ...
  
