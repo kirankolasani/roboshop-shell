@@ -5,9 +5,9 @@
     yum:
      name: httpd
      state: latest
-     notify:
-      - starting httpd
-  handlers:
+  #    notify:
+  #     - starting httpd
+  # handlers:
   - name: starting httpd
     service:
      name: httpd
