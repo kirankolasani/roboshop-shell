@@ -12,5 +12,5 @@
      path: /tmp/ansible-dir
      owner: ansible
      mode: 666
-     state: mkdir
+     state: directory
 ...
