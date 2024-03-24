@@ -3,4 +3,5 @@
   tasks:
   - name: Test connection
     ping:
+    remote_user: ansible
 ...
