@@ -7,4 +7,10 @@
      owner: ansible
      mode: 777
      state: touch
+  - name:
+    file:
+     path: /tmp/ansible-dir
+     owner: ansible
+     mode: 666
+     state: mkdir
 ...
