@@ -1,0 +1,11 @@
+- hosts: servers
+  - name: installing httpd 
+    yum:
+     name: httpd
+     state: latest
+  - name: starting httpd
+    service:
+     name: httpd
+     state: started
+ 
+ 
