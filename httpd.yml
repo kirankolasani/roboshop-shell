@@ -1,10 +1,11 @@
 ---
 - hosts: servers
-  name: installing httpd 
+  tasks:
+  - name: installing httpd 
     yum:
      name: httpd
      state: latest
-  name: starting httpd
+  - name: starting httpd
     service:
      name: httpd
      state: started
