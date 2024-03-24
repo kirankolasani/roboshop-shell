@@ -1,0 +1,10 @@
+---
+- hosts: servers
+  tasks:
+  - name: creating file 
+    file:
+     path: /tmp/custom-playbook.sh
+     owner: ansible
+     mode: 777
+     state: touch
+...
